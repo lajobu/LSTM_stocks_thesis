@@ -4,8 +4,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 result = pd.DataFrame(columns= ["Results RMSE", "Train", "Validation", "Windows size", "Neurons", "Batch size"])
 
+start_time = time.time()
+
 # windows_size
-window_size= np.arange(9, 82, 3)
+window_size = random.sample(range(1, 100), 25)
+neurons = random.sample(range(1, 100), 1)
+batch = max(list(np.arange(34, 84, 2)))
 dataset, train, data, scaler= prepare_LSTM('data/ESP.IDXEUR_Candlestick_1_Hour_BID_01.01.2015-31.12.2020.csv').data_LSTM()
 i = 0
 print("Tuning windows size, " + str(len(window_size)) + " models.")
@@ -20,7 +24,7 @@ y_train, y_val, X_train, X_val, trainX, valX, validation= split_LSTM(dataset, wi
 
 # neurons
 result.drop(result.index, inplace=True)
-neurons= np.arange(2, 51, 2)
+neurons = random.sample(range(1, 100), 25)
 i= 0
 print("Tuninng neurons, " + str(len(neurons)) + " models.")
 while i < len(neurons):
@@ -32,7 +36,7 @@ print(" Best number of neurons: " + str(neurons_))
 
 # batch
 result.drop(result.index, inplace=True)
-batch= np.arange(34, 84, 2)
+batch = np.arange(32, 82, 2).tolist()
 i= 0
 print("Tuning batch size, " + str(len(batch)) + " models.")
 while i < len(batch):
@@ -41,6 +45,6 @@ while i < len(batch):
     i +=1
 
 fig,ax = render_result(result, "table_results.png").create_table()
-fig.savefig("table_results.png", dpi= 300)
+fig.savefig("figures/table_results.png")
 
 print(str(int(time.time() - start_time)/60) + " minutes")

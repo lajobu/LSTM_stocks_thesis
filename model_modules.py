@@ -1,6 +1,7 @@
 # packages
 import pandas as pd
 import numpy as np
+import random
 import os
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import MinMaxScaler
@@ -133,7 +134,7 @@ class render_result:
         set_align_for_column(mpl_table, align="center")
 
 class run_LSTM:
-    def __init__(self, window_size, neurons= 38, batch= 84):
+    def __init__(self, window_size, neurons= 54, batch= 76):
         self.window_size= window_size
         self.neurons= neurons
         self.batch= batch
@@ -141,7 +142,7 @@ class run_LSTM:
         result = pd.DataFrame(columns= ["Results RMSE", "Train", "Validation", "Windows size", "Neurons", "Batch size"]) # to store values
         tf.random.set_seed(1234)
         rnn = Sequential()
-        rnn.add(LSTM(units= self.neurons, activation='relu', input_shape= (1, self.window_size), name='LSTM')) 
+        rnn.add(LSTM(units= self.neurons, activation='tanh', input_shape= (1, self.window_size), name='LSTM')) 
         rnn.add(Dense(1)) 
         rnn.compile(loss= 'mean_squared_error', 
         optimizer='rmsprop')   
@@ -261,7 +262,7 @@ class graphs_final_model(run_final_LSTM):
             ax.set_xticks(np.arange(8, len(loss_history), 10).tolist() + [best_epoch, len(loss_history)])
             ax.set_facecolor('#E9F1F7')
             fig.tight_layout()
-            plt.savefig('figures/Model_evaluation.png', dpi= 300)
+            plt.savefig('figures/Model_evaluation.png')
         with sns.axes_style('whitegrid'):
             fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(16, 10))
             gs = gridspec.GridSpec(1, 1, wspace=0.1, hspace=0.1)
@@ -279,7 +280,7 @@ class graphs_final_model(run_final_LSTM):
             ax1.xaxis.set_major_formatter(xformatter)
             ax1.set_facecolor('#E9F1F7')
             plt.setp(ax1.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            plt.savefig('figures/Model_predict_test.png', dpi= 300)
+            plt.savefig('figures/Model_predict_test.png')
         with sns.axes_style('whitegrid'):
             fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(16, 12))
             gs = gridspec.GridSpec(2, 1, wspace=0.4, hspace=0.3)
@@ -311,7 +312,7 @@ class graphs_final_model(run_final_LSTM):
             ax2.xaxis.set_major_formatter(xformatter)
             ax2.set_facecolor('#E9F1F7')
             plt.setp(ax2.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            plt.savefig('figures/Model_predict_val_train.png', dpi= 300)
+            plt.savefig('figures/Model_predict_val_train.png')
             plt.close()
 
 # for econometric testing
@@ -329,60 +330,12 @@ class econ_test:
         ts.index= pd.to_datetime(data.index, format= '%d.%m.%Y %H:%M')
         X= data.values
         return data, ts, components, X
-    def graph_comp(self):
-        data, ts, components, X= econ_test(self.raw_data_loc, self.window_size).data_prep()
-        xformatter = mdates.DateFormatter('%d.%b.%Y')
-        with sns.axes_style('whitegrid'):
-            fig, axes = plt.subplots(nrows=4, ncols=1, figsize=(16, 20))
-            gs = gridspec.GridSpec(4, 1, wspace=0.4, hspace=0.3)
-            ax1 = plt.subplot(gs[0])
-            plt.xticks(fontsize=16, fontname="Times New Roman")
-            plt.yticks(fontsize=16, fontname="Times New Roman")
-            ts.Price.plot(ax= ax1, c= '#760002')
-            ax1.set_title('Original, 2015-2020', fontsize=18, fontname="Times New Roman", fontdict=dict(weight='bold'))
-            ax1.set_xlabel("Date", fontsize=12, fontname="Times New Roman")
-            ax1.fmt_xdata = DateFormatter('%d.%b.%Y') 
-            ax1.xaxis.set_major_formatter(xformatter)
-            ax1.set_facecolor('#E9F1F7')
-            plt.setp(ax1.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            ax2 = plt.subplot(gs[1])
-            plt.xticks(fontsize=16, fontname="Times New Roman")
-            plt.yticks(fontsize=16, fontname="Times New Roman")
-            ts.Trend.plot(ax= ax2, c= 'blue')
-            ax2.set_title('Trend component, 2015-2020', fontsize=18, fontname="Times New Roman", fontdict=dict(weight='bold'))
-            ax2.set_xlabel("Date", fontsize=12, fontname="Times New Roman")
-            ax2.fmt_xdata = DateFormatter('%d.%b.%Y') 
-            ax2.xaxis.set_major_formatter(xformatter)
-            ax2.set_facecolor('#E9F1F7')
-            plt.setp(ax2.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            ax3 = plt.subplot(gs[2])
-            plt.xticks(fontsize=16, fontname="Times New Roman")
-            plt.yticks(fontsize=16, fontname="Times New Roman")
-            ts.Seasonality["31.08.2020 18:00:00":].plot(ax= ax3, c= 'darkgreen')
-            ax3.set_title('Seasonal component, second semester of 2020', fontsize=18, fontname="Times New Roman", fontdict=dict(weight='bold'))
-            ax3.set_xlabel("Date", fontsize=12, fontname="Times New Roman")
-            ax3.fmt_xdata = DateFormatter('%d.%b.%Y') 
-            ax3.xaxis.set_major_formatter(xformatter)
-            ax3.set_facecolor('#E9F1F7')
-            plt.setp(ax3.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            ax4 = plt.subplot(gs[3])
-            plt.xticks(fontsize=16, fontname="Times New Roman")
-            plt.yticks(fontsize=16, fontname="Times New Roman")
-            ts.Residual.plot(ax= ax4, c= 'darkorange')
-            ax4.set_title('Remainder, 2015-2020', fontsize=18, fontname="Times New Roman", fontdict=dict(weight='bold'))
-            ax4.set_xlabel("Date", fontsize=12, fontname="Times New Roman")
-            ax4.fmt_xdata = DateFormatter('%d.%b.%Y') 
-            ax4.xaxis.set_major_formatter(xformatter)
-            ax4.set_facecolor('#E9F1F7')
-            plt.setp(ax4.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            fig.savefig('figures/seasonal_decomposition.png', dpi= 300)
-            plt.close()
     def print_econ_mod(self, model, name):
         plt.rc('figure', figsize=(6, 3))
         plt.text(0, 0, str(model.summary()), {'fontsize': 16, 'fontname':"Times New Roman"})
         plt.axis('off')
         plt.tight_layout()
-        plt.savefig('figures/' + name + '.png', dpi= 300)
+        plt.savefig('figures/' + name + '.png')
         plt.close()
     def pp_test(self):
         data, ts, components, X= econ_test(self.raw_data_loc, self.window_size).data_prep()
@@ -416,4 +369,4 @@ class econ_test:
             ax1.set_facecolor('#E9F1F7')
             ax1.set_xticks(np.arange(1, self.window_size+1, 1).tolist())
             plt.setp(ax1.xaxis.get_majorticklabels(), rotation= 0, ha= 'center')
-            fig.savefig('figures/'+ name + '.png', dpi= 300)
+            fig.savefig('figures/'+ name + '.png')
