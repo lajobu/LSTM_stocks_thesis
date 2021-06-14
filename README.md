@@ -24,7 +24,7 @@ deep learning, long short-term memory, recurrent neural networks, financial time
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model1_summary.png" width="300" height="200" />
 </p>
 
-## 3) 
+## 3) Chosen parameters
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/table_model.png" width="600" height="100" />
