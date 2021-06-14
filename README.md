@@ -10,7 +10,7 @@ The increase in the computational power together with the rapid development in t
 
 # Keywords:
 
-deep learning, long short-term memory, recurrent neural networks, financial time series forecasting, IBEX 35 index, high frequency data, Diebold-Mariano test, efficient market hypothesis
+*deep learning*, *long short-term memory*, *recurrent neural networks*, *financial time series forecasting*, *IBEX 35 index*, *high frequency data*, *Diebold-Mariano test*, *efficient market hypothesis*
 
 # Codes:
 
