@@ -2,7 +2,7 @@
 
 This repository is part of the dissertation *Challenging the weak form of market efficiency: a univariate LSTM model to forecast the IBEX 35 index* by **Jorge Bueno Perez** (@lajobu). 
 
-The related work is part of the final dissertation of the master studies in *Data Science and Business Analytics* at the *University of Warsaw (Poland)*. 
+The related materials are part of the final dissertation of the master studies in *Data Science and Business Analytics* at the *University of Warsaw (Poland)*. 
 
 # Summary:
 
