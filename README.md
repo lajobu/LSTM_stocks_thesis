@@ -6,7 +6,7 @@ The related work is part of the final dissertation of the master studies in *Dat
 
 # Summary:
 
-The increase in the computational power together with the rapid development in the implementation of deep learning models enable to verify whether some hypotheses are still valid in the finance theory. A **LSTM (long short-term memory) univariate model**, based on recurrent neural networks, is used to forecast financial time series with the aim of predicting returns on the **IBEX 35 index high frequency hourly data for the last quarter of 2020**. A random walk with drift model is utilized for comparison purposes. The results of the statistical Diebold-Mariano test suggest that the weak form of efficient market hypothesis is accepted, due to the fact that the random walk with drift model has significantly better prediction accuracy than the LSTM model.
+The increase in the computational power together with the rapid development in the implementation of deep learning models enable to verify whether some hypotheses are still valid in the finance theory. A **LSTM (long short-term memory) univariate model**, based on recurrent neural networks, is used to forecast financial time series with the aim of predicting returns on the **IBEX 35 index high frequency hourly data for the last quarter of 2020**. A random walk with drift model is utilized for comparison purposes. The results of the statistical **Diebold-Mariano test** suggest that the weak form of efficient market hypothesis is accepted, due to the fact that the random walk with drift model has significantly better prediction accuracy than the LSTM model.
 
 # Keywords:
 
