@@ -62,6 +62,12 @@ The increase in the computational power together with the rapid development in t
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model_predict_val_train.png" width="500" height="400" />
 </p>
 
+# Software:
+
+The proposed *univariate LSTM many-to-one sequence forecast model applied to the IBEX35 index*, is built in *python 3.8.3*. Several packages were used while creating the model, more details about the versions can be found in [requirements](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/requirements.txt)
+
+For the purpose of running DM test, *R 4.1.0 (Camp Pontanezen)*. The package *forecast (version 8.1.4)* is utilized.
+
 # Licence
 
 Copyright (c) 2021 Jorge Bueno Perez
