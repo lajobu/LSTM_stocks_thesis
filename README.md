@@ -26,37 +26,37 @@ The increase in the computational power together with the rapid development in t
 
 # Some insights:
 
-### 1) Model pipeline scheme:
+## 1) Model pipeline scheme:
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Pipeline.png" width="500" height="200" />
 </p>
 
-### 2) Model summary:
+## 2) Model summary:
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model1_summary.png" width="300" height="200" />
 </p>
 
-### 3) Chosen parameters
+## 3) Chosen parameters
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/table_model.png" width="600" height="100" />
 </p>
 
-### 4) Training process. RMSE on validation and training samples
+## 4) Training process. RMSE on validation and training samples
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model1_train.png" width="500" height="200" />
 </p>
 
-### 5) Real and predicted mid-price in test sample
+## 5) Real and predicted mid-price in test sample
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model_predict_test.png" width="500" height="200" />
 </p>
 
-### 6) Real and predicted mid-price in training and validation samples
+## 6) Real and predicted mid-price in training and validation samples
 
 <p align="center">
   <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model_predict_val_train.png" width="500" height="400" />
