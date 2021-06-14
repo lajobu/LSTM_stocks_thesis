@@ -16,7 +16,7 @@ The increase in the computational power together with the rapid development in t
 
 :link: [model_modules.py](https://github.com/lajobu/NLP_youtube_cyberpunk/blob/main/2.data_description.ipynb) contains all the the *modules* used in this project.
 
-:link: [econ_test.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/econ_test.py) contains the *econometric tests* perfomed (unit root test and autocorrelation).
+:link: [econ_test.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/econ_test.py) contains the *econometric tests* perfomed (unit root tests and autocorrelation).
 
 :link: [tuning.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/tuning_LSTM.py) contains the *tuning process* created by the author.
 
