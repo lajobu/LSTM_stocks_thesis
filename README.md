@@ -66,7 +66,7 @@ The increase in the computational power together with the rapid development in t
 
 The proposed *univariate LSTM many-to-one sequence forecast model applied to the IBEX35 index*, is built in *python 3.8.3*. Several packages were used while creating the model, more details about the versions can be found in [requirements](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/requirements.txt)
 
-For the purpose of running DM test, *R 4.1.0 (Camp Pontanezen)*. The package *forecast (version 8.1.4)* is utilized.
+For the purpose of running Diebold-Mariano test, *R 4.1.0 (Camp Pontanezen)*. The package *forecast (version 8.1.4)* is utilized.
 
 # Licence
 
