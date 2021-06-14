@@ -10,6 +10,18 @@ The increase in the computational power together with the rapid development in t
 
 deep learning, long short-term memory, recurrent neural networks, financial time series forecasting, IBEX 35 index, high frequency data, Diebold-Mariano test, efficient market hypothesis
 
+# Codes:
+
+:link: [model_modules.py](https://github.com/lajobu/NLP_youtube_cyberpunk/blob/main/2.data_description.ipynb) contains all the the *modules* used in this project.
+
+:link: [econ_test.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/econ_test.py) contains the *econometric tests* perfomed (unit root test and autocorrelation).
+
+:link: [tuning.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/tuning_LSTM.py) contains the *tuning process* created by the author.
+
+:link: [final_model_LSTM.py](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/final_model_LSTM.py) contains the codes to run the *final model* with the selected final parameters.
+
+:link: [Diebold-Mariano_test.R](https://github.com/lajobu/LSTM_stocks_thesis/blob/master/Diebold-Mariano_test.R) contains the *Diebold-Mariano test* performed on the LSTM model and random walk with drift model.
+
 # Some insights:
 
 ## 1) Model pipeline scheme:
