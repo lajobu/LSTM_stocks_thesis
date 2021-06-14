@@ -27,7 +27,7 @@ deep learning, long short-term memory, recurrent neural networks, financial time
 ## 3) 
 
 <p align="center">
-  <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/Model1_summary.png" width="300" height="200" />
+  <img src="https://github.com/lajobu/LSTM_stocks_thesis/blob/master/figures/table_model.png" width="500" height="100" />
 </p>
 
 ## 4) Training process. RMSE on validation and training samples
