@@ -1,6 +1,8 @@
 # LSTM_stocks_thesis:
 
-This repository is part of the dissertation *Challenging the weak form of market efficiency: a univariate LSTM model to forecast the IBEX 35 index* by Jorge Bueno Perez (@lajobu). The related work is part of the master's thesis of the master studies in Data Science and Business Analytics at the University of Warsaw (Poland). 
+This repository is part of the dissertation *Challenging the weak form of market efficiency: a univariate LSTM model to forecast the IBEX 35 index* by Jorge Bueno Perez (@lajobu). 
+
+The related work is part of the final dissertation of the master studies in *Data Science and Business Analytics* at the *University of Warsaw (Poland)*. 
 
 # Summary:
 
