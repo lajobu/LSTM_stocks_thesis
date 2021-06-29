@@ -68,6 +68,10 @@ The proposed *univariate LSTM many-to-one sequence forecast model applied to the
 
 For the purpose of running Diebold-Mariano test, *R 4.1.0 (Camp Pontanezen)*. The package *forecast (version 8.1.4)* is utilized.
 
+# Data source:
+
+https://www.dukascopy.com/swiss/english/home/
+
 # Licence
 
 Copyright (c) 2021 Jorge Bueno Perez
