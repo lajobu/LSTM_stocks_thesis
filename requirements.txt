@@ -18,7 +18,7 @@ google-pasta==0.2.0
 grpcio @ file:///var/folders/6d/g9df3n_x2_g97xf8v409d82h0000gn/T/tmp.Gypwb0nn/tensorflow_macos/x86_64/grpcio-1.33.2-cp38-cp38-macosx_11_0_x86_64.whl
 h5py @ file:///var/folders/6d/g9df3n_x2_g97xf8v409d82h0000gn/T/tmp.Gypwb0nn/tensorflow_macos/x86_64/h5py-2.10.0-cp38-cp38-macosx_11_0_x86_64.whl
 idna==2.10
-ipython==7.21.0
+ipython==7.31.1
 ipython-genutils==0.2.0
 jedi==0.18.0
 joblib==1.0.1
